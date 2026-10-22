@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>绘语 · 世界单词绘本</title>
+  <meta name="description" content="像翻绘本一样学单词：英、日、韩三语闪卡，认识它，或者再想想。" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══ 绘本封面区 ═══ -->
+  <header class="cover">
+    <div class="cover-deco">
+      <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+    </div>
+    <h1>绘 语</h1>
+    <p class="cover-sub">一本可以翻的世界单词绘本</p>
+    <div class="bookshelf">
+      <button class="shelf-book en on" data-lang="en">英语本</button>
+      <button class="shelf-book ja" data-lang="ja">日语本</button>
+      <button class="shelf-book ko" data-lang="ko">韩语本</button>
+    </div>
+  </header>
+
+  <!-- ═══ 学习页 ═══ -->
+  <main class="page">
+
+    <!-- 进度小旗 -->
+    <div class="flags">
+      <div class="flag">
+        <span class="flag-dot d1"></span>
+        <div><b id="fTotal">0</b><small>本册词数</small></div>
+      </div>
+      <div class="flag">
+        <span class="flag-dot d2"></span>
+        <div><b id="fToday">0</b><small>今天翻过</small></div>
+      </div>
+      <div class="flag">
+        <span class="flag-dot d3"></span>
+        <div><b id="fKnown">0</b><small>已经认识</small></div>
+      </div>
+    </div>
+
+    <!-- 闪卡 -->
+    <section class="card-zone">
+      <div class="flip-card" id="flipCard">
+        <div class="flip-inner">
+          <div class="flip-face front">
+            <span class="face-tag">正面 · 点我翻面</span>
+            <b class="word" id="wFront">hello</b>
+          </div>
+          <div class="flip-face back">
+            <span class="face-tag">背面</span>
+            <b class="word small" id="wWord">hello</b>
+            <span class="reading" id="wReading">həˈləʊ</span>
+            <span class="meaning" id="wMeaning">你好</span>
+          </div>
+        </div>
+      </div>
+      <p class="card-hint">先看正面想一想，再点卡片看答案</p>
+    </section>
+
+    <!-- 三色纽扣 -->
+    <section class="buttons">
+      <button class="soft-btn peach" id="btnNo">
+        <b>还不认识</b><small>放回队首，等下再见</small>
+      </button>
+      <button class="soft-btn sky" id="btnFuzzy">
+        <b>有点眼熟</b><small>放回队中，稍后复习</small>
+      </button>
+      <button class="soft-btn moss" id="btnYes">
+        <b>认识啦</b><small>收进「已经认识」口袋</small>
+      </button>
+    </section>
+
+    <!-- 口袋 -->
+    <section class="pocket" id="pocketZone" hidden>
+      <div class="pocket-head">
+        <h2>已经认识的口袋</h2>
+        <button class="tuck-btn" id="tuckToggle">打开看看</button>
+      </div>
+      <div class="pocket-list" id="pocketList" hidden></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
